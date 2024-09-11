@@ -1,0 +1,331 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Kaisei Opti", system-ui;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Kaisei Decol", system-ui;
+}
+
+img {
+    max-width: 100%;
+}
+
+:root {
+    /*Colores interfaz*/
+    --primario: #4C5EB9;
+    --secundario: #E9933C;
+    --oscurobajo: #36417D;
+    --oscuromedio: #363D63;
+    --oscuro: #2D3353;
+    --medio: #7D8FE8;
+    --claromedio: #A3B1F5;
+    --clarobajo: #D1D8FA;
+    --fondo: #E5EAFF;
+}
+
+
+/*Agregamos los estilos de celular*/
+.main {
+    overflow: hidden;
+    padding: 24px;
+}
+
+.banner{
+     display: flex;
+     flex-direction: column;
+     gap: 32px;
+     margin-bottom: 20px;
+
+    .usuario {
+        background-color: var(--fondo);
+        padding: 20px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        
+    
+        img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 80px;
+        }  
+        
+        .datos {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+    
+            .datos__nombre {
+                flex-direction: column;
+                gap: 8px;
+    
+                h1 {
+                    font-size: 24px;
+                    text-align: center;
+                    color: var(--oscuro);
+                }
+    
+                p {
+                    font-size: 16px;
+                    text-align: center;
+                    color: var(--oscuro);
+                }
+                
+            }
+    
+            .datos__icons {
+                display: flex;
+                justify-content: center;
+                gap: 16px;
+    
+                a {
+                    font-size: 24px;
+                    line-height: 24px;
+                    color: var(--oscuro);
+                    transition: .3s ease-in-out;
+                }
+    
+                a:hover {
+                    color:var(--primario)
+                }
+            }
+    
+            .datos__cv {
+                display: flex;
+                justify-content: center;
+    
+                a {
+                    background-color: var(--medio);
+                    padding: 8px 16px;
+                    border-radius: 8px;
+                    color: var(--fondo);
+                    font-weight: 500;
+                    width: max-content;
+                    transition: .3s ease-in-out;
+
+                }
+    
+                a:hover {
+                    color: var(--oscuromedio);
+                    background-color: var(--secundario);
+                }
+            }
+    
+        }
+        
+    }
+
+    .titular {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        p {
+            text-align: center;
+            color: var(--oscuro);
+            font-size: 16px;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--oscuro);
+            font-size: 20px;
+        }
+    }
+}
+
+.proyectos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+
+    .card {
+        background-color: var(--fondo);
+        border-radius: 16px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+
+        img {
+            width: 100%;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            h2 {
+                font-size: 14px;
+                text-align: center;
+                color: var(--oscurobajo);
+            }
+
+            p {
+                font-size: 12px;
+                text-align: center;
+                background-color: var(--fondo);
+            }
+            
+        }
+
+        a {
+            background-color: var(--medio);
+            font-size: 16px;
+            padding: 4px 12px;
+            border-radius: 8px;
+            color: var(--fondo);
+            width: 100%;
+            min-width: max-content;
+            text-align: center;
+            transition: .3s ease-in-out;
+        }
+
+        a:hover {
+            background-color: var(--secundario);
+            color: var(--oscurobajo);
+        }
+    }
+    
+}
+
+
+
+/*Agregamos los estilos en modo escritorio*/
+@media screen and (min-width: 1024px){
+    .main {
+        padding: 64px;
+    }
+
+    .banner {
+        background-color: var(--fondo);
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        border-radius: 24px; 
+        padding: 32px;
+
+    .usuario {
+        padding: 0px;
+        flex-direction: row;
+        background-color: inherit;
+        border-radius: 0px;
+        padding-right: 64px;
+        margin-right: 64px;
+        border-right: 1px solid var(--claromedio);
+    
+        img {
+             width: 180px;
+             height: 180px;
+        }
+    
+        .datos {
+    
+            .datos__nombre {
+    
+                h1 {
+                    text-align: left;
+                    font-size: 32px;
+    
+                }
+    
+                p {
+                    text-align: left;
+                    font-size: 20px;
+                }
+    
+            }
+    
+            .datos__icons {
+                justify-content: flex-start;
+            }
+    
+            .datos__cv {
+                 justify-content: flex-start;
+    
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .titular {
+        display: flex;
+        gap: 8px;
+        flex-direction: column;
+
+        p {
+            font-size: 20px;
+            color: var(--oscuro);
+            text-align: left;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: var(--oscuro);
+            text-align: left;
+            
+        }
+    }
+    
+    }
+
+    .proyectos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 24px;
+
+        .card {
+            border-radius: 24px;
+            padding: 20px;
+            gap: 24px;
+    
+            img {
+                width: 100%;
+                height: inherit;
+                aspect-ratio: 4 / 2.5;
+                border-radius: 12px;
+            }
+    
+            .info {
+                gap: 16px;
+    
+                h2 {
+                    font-size: 20px;
+        
+                }
+    
+                p {
+                    font-size: 16px;
+            
+                }
+                
+            }
+    
+            a {
+                font-size: 20px;
+                padding: 16px 32px;
+                border-radius: 12px;
+                width: max-content;
+            }
+
+        }
+
+    }
+
+
+}
